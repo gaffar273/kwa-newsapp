@@ -1,0 +1,13 @@
+.home {
+  padding-top: 80px; 
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.article-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}

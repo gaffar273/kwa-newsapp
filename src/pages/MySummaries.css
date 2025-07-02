@@ -1,0 +1,15 @@
+.summaries-page {
+  padding-top: 80px; 
+  padding: 2rem;
+  text-align: center;
+}
+
+.summaries-page h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.summaries-page p {
+  font-size: 1.1rem;
+  color: #666;
+}

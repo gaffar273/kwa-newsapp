@@ -1,0 +1,42 @@
+.card {
+  border: 1px solid #ccc;
+  margin: 1rem;
+  padding: 1rem;
+  width: 300px;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: scale(1.02);
+  background-color: #f9f9f9;
+}
+.card img {
+  width: 100%;
+  height: auto;
+}
+.details {
+  margin-top: 1rem;
+}
+.btns{
+  margin-top: 0.8rem;
+}
+.full-at{
+  text-decoration: none;
+  border: #333 1px solid;
+  border-radius: 5px;
+  color: #f16060;
+  font-size: 14px;
+  padding: 2px 5px;
+}
+.full-at:hover{
+  background: #f16060;
+  color: #f9f9f9;
+}
+button{
+  margin-left: 5px;
+  text-decoration: none;
+  border: #333 1px solid;
+  border-radius: 5px;
+  color: #131313;
+  font-size: 14px;
+  padding: 2px 5px;
+}

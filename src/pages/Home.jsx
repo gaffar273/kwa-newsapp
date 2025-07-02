@@ -1,0 +1,39 @@
+import React, { useEffect, useState } from 'react';
+import CategoryTabs from '../components/CategoryTabs';
+import ArticleCard from '../components/ArticleCard';
+import './Home.css';
+
+const Home = () => {
+  const [category, setCategory] = useState('general');
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=9b05e6bca0034a00be0b8e091cdfee55`)
+      .then(res => res.json())
+      .then(data => {
+        setArticles(data.articles || []);
+        setLoading(false);
+      }).catch(() => {
+        setError(true);
+        setLoading(false);
+      });
+  }, [category]);
+
+  return (
+    <div className="home">
+      <CategoryTabs setCategory={setCategory} />
+      {loading ? <p>Loading...</p> :
+        error ? <p>Error loading articles</p> :
+        articles.length === 0 ? <p>No articles found</p> :
+        <div className="article-list">
+          {articles.map((a, i) => <ArticleCard key={i} article={a} />)}
+        </div>
+      }
+    </div>
+  );
+};
+
+export default Home;
