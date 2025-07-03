@@ -9,10 +9,10 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-const NEWS_API_KEY = '9b05e6bca0034a00be0b8e091cdfee55'
+const NEWS_API_KEY = 'b88b287298b61f24683d7c02feaa0868'
   useEffect(() => {
     setLoading(true);
-    fetch(`https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${NEWS_API_KEY}`)
+    fetch(`https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=us&max=10&apikey=${NEWS_API_KEY}`)
       .then(res => res.json())
       .then(data => {
         setArticles(data.articles || []);
