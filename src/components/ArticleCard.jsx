@@ -10,7 +10,7 @@ const ArticleCard = ({ article }) => {
 
   return (
     <div className="card" onClick={() => setShowDetail(!showDetail)}>
-      <img src={article.urlToImage} alt="thumb" />
+      <img src={article.image || 'https://via.placeholder.com/300x200?text=No+Image'} alt="thumb" />
       <h3>{article.title}</h3>
       <p>{article.source.name}</p>
 
