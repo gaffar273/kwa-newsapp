@@ -27,7 +27,7 @@ const ArticleCard = ({ article }) => {
           })}</p>
           <div className="btns">
             <a href={article.url} target="_blank" rel="noreferrer" className='full-at'>Read Full Article</a>
-            <button onClick={summarize}>Summarize</button>
+            <button >Summarize</button>
           </div>
         </div>
       )}
