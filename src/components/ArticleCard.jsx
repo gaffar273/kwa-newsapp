@@ -6,22 +6,7 @@ const ArticleCard = ({ article }) => {
   const [summary, setSummary] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const summarize = async () => {
-    setLoading(true);
-    const res = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyBjRawvGJf4VEdLb1BU__KXuvRgw9R2XJI', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{
-          parts: [{ text: `Summarize the following article in 3 bullet points:\n\n${article.description || article.content}` }]
-        }]
-      })
-    });
-    const data = await res.json();
-    const bullets = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Error generating summary';
-    setSummary(bullets);
-    setLoading(false);
-  };
+
 
   return (
     <div className="card" onClick={() => setShowDetail(!showDetail)}>
