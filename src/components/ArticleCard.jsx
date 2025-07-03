@@ -3,7 +3,7 @@ import './ArticleCard.css';
 
 const ArticleCard = ({ article }) => {
   const [showDetail, setShowDetail] = useState(false);
-  const [summary, setSummary] = useState('');
+  
   const [loading, setLoading] = useState(false);
 
 
